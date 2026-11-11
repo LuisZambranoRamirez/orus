@@ -110,3 +110,5 @@ const imageUrl = `data:image/png;base64,${response.charts.historical_png_base64}
 - El dataset se carga una sola vez por proceso. Si ejecutas varios workers, cada worker tendrá su propia copia en memoria.
 - El endpoint de predicción es síncrono porque pandas y SARIMAX realizan trabajo de CPU. FastAPI ejecuta las rutas `def` en su thread pool.
 - `seasonal_decompose`, ACF, PACF y otras importaciones del script original se omitieron porque no intervenían en el resultado calculado.
+
+uvicorn app.main:app --reload
